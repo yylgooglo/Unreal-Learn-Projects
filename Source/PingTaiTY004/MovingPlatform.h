@@ -23,4 +23,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnywhere)
+	float NumberFloat = 10.2f;//游戏一开始的速度
+
+	int NumberInt = 20;//游戏一开始的分数
 };
