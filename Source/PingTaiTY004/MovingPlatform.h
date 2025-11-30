@@ -4,7 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MovingPlatform.generated.h"
+#include "MovingPlatform.generated.h"// 你的类名.generated.h
+//#include "Components/StaticMeshComponent.h"  // 加这个：StaticMeshComponent
 
 UCLASS()
 class PINGTAITY004_API AMovingPlatform : public AActor
@@ -15,16 +16,17 @@ public:
 	// Sets default values for this actor's properties
 	AMovingPlatform();
 
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	
 	UPROPERTY(EditAnywhere)
-	float NumberFloat = 10.2f;//游戏一开始的速度
-
-	int NumberInt = 20;//游戏一开始的分数
+	FVector PlatformVelocity = FVector{ 0.0f, 0.0f, 0.0f };
 };
